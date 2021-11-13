@@ -1,7 +1,7 @@
 const express = require('express')
 const algo = require('./algo')
 
-const port = 5000
+const port = 3000     // En clase 5000, pero me daba problemas de acceso en mi maquina...
 
 const app = express()
 
@@ -141,7 +141,10 @@ app.get(`${route}/edad/:rango`, (req, res) => {        // En clase header
   }
 })
 
+app.get('/', function(req, res){
+  res.send("Hello world from Express!!");
+});
 
 app.listen(port, () => {
-  console.log("Escuchando")
-})
+  console.log("Escuchando puerto 3000")
+})      // El 5000 me daba problemas de acceso en mi maquina...
